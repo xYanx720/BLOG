@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        background-color: #f5d858;
+        
+        
+        width: 450px;
+        height: 300px;
+        color: #303133;
+        
+        /* font-weight: ; */
+        font-size: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: 'Concert One', cursive;
+        /* font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif; */
+        list-style: none;
+      }
+      body,
+      html {
+        height: 100%;
+        background-color: #708090;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      input{
+        height: 30px;
+        width: 300px;
+      }
+      button{
+        width: 60px;
+        height: 30px;
+        margin-bottom: 20px;
+      }
+    </style>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap"
+    rel="stylesheet"
+  />
+  </head>
+  <body>
+
+    <!-- <input type="text" class="scanner" style="margin-bottom: 10px" />
+    <button class="send">send</button> -->
+    <section class="console">
+      <div>
+        <button id="es">ES</button>
+        <button id="node">NODE</button>
+
+      </div>
+      <div>
+        <input type="text" class="content" placeholder="content">
+        <button class="send">SEND</button>
+      </div>
+      <div>
+        <input type="number" class="fontsize" placeholder="fontsize">
+        <button class="set">SET</button>
+      </div>
+      
+    </section>
+    <ul class="container">
+      <li>Node Js</li>
+      
+    </ul>
+    <script>
+        let ul = document.querySelector('.container');
+        let content = document.querySelector('.content');
+        let send = document.querySelector('.send');
+        let fontsize = document.querySelector('.fontsize');
+        let set = document.querySelector('.set');
+        let es = document.querySelector('#es');
+        let node = document.querySelector('#node');
+      
+        send.onclick = function(e){
+          e = e || window.event;
+          let li = document.createElement('li');
+          li.innerText = content.value;
+          ul.appendChild(li);
+          content.value = '';
+        }
+
+        set.onclick = function(){
+            ul.style.fontSize = `${fontsize.value}px`;
+        }
+
+        es.onclick = function(){
+          ul.style.backgroundColor = '#f5d858';
+          ul.style.color = '#303133';
+        }
+        node.onclick = function(){
+          ul.style.backgroundColor = '#5fa04e';
+          ul.style.color = '#fff';
+        }
+
+
+    </script>
+  </body>
+</html>
